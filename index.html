@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#050d15"
+    >
+
+    <title>O Rei dos Tigres</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         КНОПКА ЗВУКА
+    ====================================== -->
+
+    <button
+        id="soundToggle"
+        class="sound-button"
+        type="button"
+        aria-label="Som"
+    >
+        🔊
+    </button>
+
+
+
+    <!-- =====================================
+         ГЛАВНЫЙ ЭКРАН
+    ====================================== -->
+
+    <section
+        id="welcomeScreen"
+        class="screen welcome-screen"
+    >
+
+        <div class="welcome-content">
+
+
+            <h1 class="welcome-title">
+
+                SEJAM BEM-VINDOS AO<br>
+                SIGNAIS DO TIGRE 🔥🐯
+
+            </h1>
+
+
+
+            <img
+                src="assets/tiger.png"
+                class="tiger"
+                alt=""
+            >
+
+
+
+            <button
+                id="openFieldButton"
+                class="main-button welcome-button"
+                type="button"
+            >
+
+                RECEBER O SINAL
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ЭКРАН ПОЛЯ
+    ====================================== -->
+
+    <section
+        id="gameScreen"
+        class="screen game-screen hidden"
+    >
+
+
+        <!-- =================================
+             КНОПКА НАЗАД
+        ================================== -->
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+            aria-label="Voltar"
+        >
+            &lt;
+        </button>
+
+
+
+        <div class="game-container">
+
+
+            <!-- =================================
+                 ПОЛЕ 5×5
+            ================================== -->
+
+            <div
+                id="field"
+                class="field"
+            ></div>
+
+
+
+            <!-- =================================
+                 СТАТУС ЗАГРУЗКИ
+            ================================== -->
+
+            <div
+                id="downloadStatus"
+                class="download-status hidden-status"
+            >
+
+                <span>
+                    PRECISÃO DO SINAL:
+                </span>
+
+                <strong id="downloadPercent">
+                    0%
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================
+                 УПРАВЛЕНИЕ
+            ================================== -->
+
+            <div class="controls">
+
+
+                <div class="slider-title">
+
+                    <span>
+                        NÚMERO DE MINAS NO CAMPO
+                    </span>
+
+                    <span id="starCount">
+                        5
+                    </span>
+
+                </div>
+
+
+
+                <input
+                type="range"
+                id="starSlider"
+                min="1"
+                max="24"
+                value="1"
+                step="1"
+>
+
+
+
+                <button
+                    id="generateButton"
+                    class="main-button"
+                    type="button"
+                >
+
+                    RECEBER O SINAL
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         ОКНО ЗАГРУЗКИ
+    ====================================== -->
+
+    <div
+        id="loadingOverlay"
+        class="loading-overlay hidden"
+    >
+
+        <div class="loading-box">
+
+
+            <div class="loading-spinner">
+
+                <div class="spinner-ring"></div>
+
+                <div class="spinner-core">
+                    ✦
+                </div>
+
+            </div>
+
+
+
+            <div class="loading-text">
+
+                EM BUSCA DAS ESTRELAS...
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
