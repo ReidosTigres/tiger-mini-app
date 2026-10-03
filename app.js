@@ -84,22 +84,26 @@ function getAudioContext() {
 
     if (!audioContext) {
 
-        audioContext =
-            new (
-                window.AudioContext ||
-                window.webkitAudioContext
-            )();
-    }
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
 
+        if (!AudioContext) {
+            return null;
+        }
+
+        audioContext =
+            new AudioContext();
+    }
 
     if (
         audioContext.state ===
         "suspended"
     ) {
 
-        audioContext.resume();
+        audioContext.resume()
+            .catch(() => {});
     }
-
 
     return audioContext;
 }
@@ -118,11 +122,14 @@ function playClickSound() {
 
 
     const context =
-        getAudioContext();
+    getAudioContext();
 
+if (!context) {
+    return;
+}
 
-    const oscillator =
-        context.createOscillator();
+const oscillator =
+    context.createOscillator();
 
 
     const gain =
@@ -194,11 +201,14 @@ function playStarSound() {
 
 
     const context =
-        getAudioContext();
+    getAudioContext();
 
+if (!context) {
+    return;
+}
 
-    const oscillator =
-        context.createOscillator();
+const oscillator =
+    context.createOscillator();
 
 
     const gain =
