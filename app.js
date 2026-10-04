@@ -977,3 +977,19 @@ starCount.textContent =
 */
 
 createField();
+
+/* =========================================
+   ПРЕДЗАГРУЗКА ЗВЕЗДЫ
+========================================= */
+
+const preloadedStar = new Image();
+
+preloadedStar.src = "assets/star.png";
+
+preloadedStar.onload = () => {
+    console.log("Star texture loaded");
+};
+
+preloadedStar.onerror = () => {
+    console.error("Failed to load star.png");
+};
