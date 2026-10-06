@@ -547,10 +547,8 @@ async function showStars(
 function getDownloadPercent() {
 
     return (
-        Math.floor(
-            Math.random() * 8
-        ) + 90
-    );
+        Math.random() * (98.5 - 97) + 97
+    ).toFixed(1);
 }
 
 
